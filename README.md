@@ -51,7 +51,7 @@ To be updated as we progress
 3. Make a Local Clone: Clone the forked repository to your local machine (computer)
 
    - Click on the "Code" button on the Repo page
-   - Copy the URL for the forked Repo "https://github.com/zuri-training/proj_team_20.git"
+   - Copy the URL for the forked Repo "https://github.com/just-projects-team-7/foodsteps.git"
    - Create a Folder on your Local machine / Computer for the project Workspace
    - Open Command prompt / Terminal in the same folder location
    - In your Terminal, type:
@@ -69,5 +69,4 @@ To be updated as we progress
   - Do not merge your code unless necessary
   
  
-  - 
 
