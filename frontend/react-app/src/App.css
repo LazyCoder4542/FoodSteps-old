@@ -26,3 +26,17 @@
   /* text sizes */
 
 }
+
+body {
+  color: var(--clr-black-100);
+  font-family: var(--ff-content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-header);
+}
