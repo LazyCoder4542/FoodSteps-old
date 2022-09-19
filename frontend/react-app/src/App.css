@@ -27,6 +27,16 @@
 
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#site-header>.header-nav>a.active {
+  background: var(--clr-orange-100);
+}
+
 body {
   color: var(--clr-black-100);
   font-family: var(--ff-content);
