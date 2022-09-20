@@ -88,7 +88,7 @@ export default App;
 function headerScroll() {
   window.onscroll = function () { myFunction() };
 
-  var header = document.getElementById("site-header").querySelector('.wrapper2');
+  var header = document.getElementById("site-header");
   var body = document.querySelector(".container");
   var sticky = header.offsetTop;
   console.log(sticky);

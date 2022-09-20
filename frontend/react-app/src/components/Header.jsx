@@ -17,7 +17,7 @@ class Header extends Component {
         <div className="wrapper2">
           <div className="menu">
             <div
-              className="hamburger"
+              className="hamburger svg-wrapper"
               onClick={() => {
                 let elem = document
                   .querySelector("#site-header")
@@ -116,7 +116,7 @@ class Search extends Component {
               placeholder="search"
             />
           </span>
-          <span>
+          <span className="svg-wrapper">
             <svg
               width="24"
               height="24"
