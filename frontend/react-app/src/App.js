@@ -91,17 +91,16 @@ function headerScroll() {
   var header = document.getElementById("site-header");
   var body = document.querySelector(".container");
   var sticky = header.offsetTop;
-  console.log(sticky);
   function myFunction() {
+    console.log('function invoked');
     if (window.scrollY > sticky) {
       header.classList.add("sticky");
       body.style.paddingTop = header.getBoundingClientRect().height + 'px'
-
+      console.log('added');
     } else {
       header.classList.remove("sticky");
       body.style.paddingTop = null
       console.log('removed');
     }
-    console.log(header.getBoundingClientRect().height);
   }
 }
