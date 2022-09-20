@@ -4,8 +4,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 import './App.css';
+
+// IMPORTING PAGES
 import HomePage from "./pages/Home";
+import Categories from "./pages/Categories";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
+import Write from "./pages/Write";
 import Page404 from "./pages/404";
+
+// IMPORTING COMPONENTS
 import Header from "./components/Header";
 class App extends Component {
   state = {}
@@ -34,6 +42,9 @@ class App extends Component {
     }
     else { toggleDarkMode(match.matches); }
   }
+  componentDidMount() {
+    headerScroll()
+  }
   themetoggler = () => {
     var currentTheme = document.documentElement.dataset.theme || 'light';
     var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -44,20 +55,53 @@ class App extends Component {
     return (
       <Router>
         <Header themetoggler={this.themetoggler} />
-        <Routes>
-          <Route exact path="/" element={
-            <React.Fragment>
+        <div className="container">
+          <Routes>
+            <Route exact path="/" element={
               <HomePage />
-            </React.Fragment>
-
-          } />
-          <Route path="*" element={
-            <Page404 />
-          } />
-        </Routes>
-      </Router>
+            } />
+            <Route path="/categories" element={
+              <Categories />
+            } />
+            <Route path="/about" element={
+              <About />
+            } />
+            <Route path="/contact-us" element={
+              <ContactUs />
+            } />
+            <Route path="/write-for-us" element={
+              <Write />
+            } />
+            <Route path="*" element={
+              <Page404 />
+            } />
+          </Routes>
+        </div>
+      </Router >
     );
   }
 }
 
 export default App;
+
+
+function headerScroll() {
+  window.onscroll = function () { myFunction() };
+
+  var header = document.getElementById("site-header").querySelector('.wrapper2');
+  var body = document.querySelector(".container");
+  var sticky = header.offsetTop;
+  console.log(sticky);
+  function myFunction() {
+    if (window.scrollY > sticky) {
+      header.classList.add("sticky");
+      body.style.paddingTop = header.getBoundingClientRect().height + 'px'
+
+    } else {
+      header.classList.remove("sticky");
+      body.style.paddingTop = null
+      console.log('removed');
+    }
+    console.log(header.getBoundingClientRect().height);
+  }
+}
