@@ -8,4 +8,4 @@ When you download a new dependency or package, add it to the requirements.txt us
 
 `pip freeze > requirements.txt`
 
-That way we can avoid errors, you can also pass code instructions to me using this Readme file. :hug:
+That way we can avoid errors, you can also pass code instructions to me using this Readme file. :hugs:
