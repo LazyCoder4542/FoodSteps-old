@@ -23,8 +23,50 @@
   --clr-yellow-20: #F7EEC4;
   --clr-yellow-5: #F6F4E9;
 
-  /* text sizes */
+  /* Page Padding */
+  --page-padding: 1rem;
+}
 
+/* shows all light mode elements */
+:root .light {
+  display: block;
+}
+
+/* hides all dark mode elements */
+:root .dark {
+  display: none;
+}
+
+:root[data-theme=dark] {
+  /* SWITCH CASES FOR DARK MODE */
+  /* waiting for designers to update this */
+  --clr-white: #17181C;
+  --clr-link: #3633F8;
+  --clr-orange-100: #FF6700;
+  --clr-orange-80: #FD8331;
+  --clr-orange-50: #FAAD7A;
+  --clr-orange-20: #F7D9C4;
+  --clr-orange-5: #F6EEE9;
+  --clr-black-100: #FFFFFF;
+  --clr-black-80: #434447;
+  --clr-black-50: #858688;
+  --clr-black-20: #C9C9CA;
+  --clr-black-5: #EAEAEA;
+  --clr-yellow-100: #FFD300;
+  --clr-yellow-80: #FDDA31;
+  --clr-yellow-50: #FAE37A;
+  --clr-yellow-20: #F7EEC4;
+  --clr-yellow-5: #F6F4E9;
+}
+
+/* shows all dark mode elements */
+:root[data-theme=dark] .dark {
+  display: block;
+}
+
+/* hides all light mode elements */
+:root[data-theme=dark] .light {
+  display: none;
 }
 
 * {
@@ -33,13 +75,12 @@
   padding: 0;
 }
 
-#site-header>.header-nav>a.active {
-  background: var(--clr-orange-100);
-}
-
 body {
+  overflow-x: hidden;
   color: var(--clr-black-100);
   font-family: var(--ff-content);
+  background-color: var(--clr-white);
+  min-height: 100vh;
 }
 
 h1,
@@ -49,4 +90,42 @@ h4,
 h5,
 h6 {
   font-family: var(--ff-header);
+}
+
+/*img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* site header */
+#site-header {
+  --padding: .5rem var(--page-padding);
+}
+
+#site-header>.wrapper1,
+#site-header>.wrapper2 {
+  padding: var(--padding)
+}
+
+#site-header>.wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-black-5)
+}
+
+#site-header>.wrapper1>.icon {
+  height: 2rem;
+  display: inline-flex;
+}
+
+#site-header>.wrapper1>.toggle-theme>span {
+  display: inline-flex;
+  height: 2rem;
+}
+
+#site-header>.header-nav>nav>a.active {
+  background: var(--clr-orange-100);
 }

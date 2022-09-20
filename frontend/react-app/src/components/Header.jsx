@@ -1,56 +1,43 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <header id="site-header">
-        <div className="icon">
-          <img src="icons/logo.svg" alt="logo" />
+        <div className="wrapper1">
+          <div className="icon">
+            <img src="icons/logo.svg" alt="logo" />
+          </div>
+          <ToggleTheme handleClick={this.props.themetoggler} />
         </div>
-        <Search />
-        <ToggleTheme />
-        <div className="header-nav">
-          <nav>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : null)}
-            >
-              Home
-            </NavLink>
-          </nav>
-          <nav>
-            <NavLink
-              to="/categories"
-              className={({ isActive }) => (isActive ? "active" : null)}
-            >
-              Categories
-            </NavLink>
-          </nav>
-          <nav>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? "active" : null)}
-            >
-              About
-            </NavLink>
-          </nav>
-          <nav>
-            <NavLink
-              to="/contact-us"
-              className={({ isActive }) => (isActive ? "active" : null)}
-            >
-              Contact Us
-            </NavLink>
-          </nav>
-          <nav>
-            <NavLink
-              to="/write-for-us"
-              className={({ isActive }) => (isActive ? "active" : null)}
-            >
-              Write for us
-            </NavLink>
-          </nav>
+        <div className="wrapper2">
+          <Search />
+          <div className="menu">
+            <div className="hamburger">icon</div>
+            <div className="header-nav">
+              <nav>
+                <NavLink to="/" end>
+                  Home
+                </NavLink>
+              </nav>
+              <nav>
+                <NavLink to="/categories">Categories</NavLink>
+              </nav>
+              <nav>
+                <NavLink to="/about">About</NavLink>
+              </nav>
+              <nav>
+                <NavLink to="/contact-us">Contact Us</NavLink>
+              </nav>
+              <nav>
+                <NavLink to="/write-for-us">Write for us</NavLink>
+              </nav>
+            </div>
+          </div>
         </div>
       </header>
     );
@@ -77,12 +64,12 @@ class Search extends Component {
     );
   }
 }
-function ToggleTheme() {
+function ToggleTheme(props) {
   return (
-    <div className="toggle-theme">
+    <div className="toggle-theme" onClick={props.handleClick}>
       <span>
-        <img src="icons/theme-dark.svg" alt="theme-icon" />
-        <img src="icons/theme-light.svg" alt="theme-icon" />
+        <img src="icons/theme-dark.svg" alt="theme-icon" className="light" />
+        <img src="icons/theme-light.svg" alt="theme-icon" className="dark" />
       </span>
     </div>
   );
