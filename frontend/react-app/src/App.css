@@ -158,8 +158,12 @@ h1 {
 
 #site-header>.wrapper1>.toggle-theme>span {
   display: inline-flex;
-  height: 2rem;
+  height: 2.5rem;
+  padding: .5rem;
+  background-color: var(--clr-orange-20);
+  border-radius: 50%;
 }
+
 
 #site-header>.wrapper2 {
   column-gap: 2rem;

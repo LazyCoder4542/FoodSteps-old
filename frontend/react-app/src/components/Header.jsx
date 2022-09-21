@@ -186,8 +186,8 @@ function ToggleTheme(props) {
   return (
     <div className="toggle-theme" onClick={props.handleClick}>
       <span>
-        <img src="icons/theme-dark.svg" alt="theme-icon" className="light" />
-        <img src="icons/theme-light.svg" alt="theme-icon" className="dark" />
+        <img src="icons/moon.svg" alt="theme-icon" className="light" />
+        <img src="icons/sun.svg" alt="theme-icon" className="dark" />
       </span>
     </div>
   );
