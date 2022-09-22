@@ -82,6 +82,33 @@ section#hero>img.hero-desktop {
     visibility: hidden;
 }
 
+section#featured>.wrapper>.post-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+section#featured>.wrapper>.post-cards>.card {
+    width: 18rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-img>img {
+    width: 100%;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details {
+    text-align: center;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
+    background-color: var(--clr-black-5);
+    padding: .5rem;
+    display: inline-flex;
+    border-radius: .5rem;
+    font-size: .9rem;
+}
+
 @media screen and (min-width: 1024px) {
     section#hero>img.hero-mobile {
         display: none;
