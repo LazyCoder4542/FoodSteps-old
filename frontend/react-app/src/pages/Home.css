@@ -82,29 +82,46 @@ section#hero>img.hero-desktop {
     visibility: hidden;
 }
 
+section#featured>.wrapper {
+    overflow-y: auto;
+}
+
 section#featured>.wrapper>.post-cards {
     display: flex;
-    flex-direction: column;
 }
 
 section#featured>.wrapper>.post-cards>.card {
+    flex-shrink: 0;
     width: 18rem;
     padding: 1rem;
     border-radius: 1rem;
 }
 
+section#featured>.wrapper>.post-cards>.card>.post-img {
+    height: 12rem;
+    border-radius: inherit;
+}
+
 section#featured>.wrapper>.post-cards>.card>.post-img>img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    object-position: center;
 }
 
 section#featured>.wrapper>.post-cards>.card>.post-details {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    align-items: center;
 }
 
 section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
     background-color: var(--clr-black-5);
     padding: .5rem;
-    display: inline-flex;
+    display: table;
     border-radius: .5rem;
     font-size: .9rem;
 }

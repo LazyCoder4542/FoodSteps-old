@@ -196,7 +196,7 @@ h1 {
   flex-direction: column;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 200;
   background-color: var(--clr-yellow-50);
   border-radius: 0 1rem 1rem 0;
   padding: 1rem;
@@ -247,8 +247,10 @@ h1 {
 }
 
 #site-header>.wrapper2>.menu.active>.header-nav {
+  margin-right: 100vw;
   opacity: 1;
   transform: translateX(0%);
+  pointer-events: all;
 }
 
 
@@ -350,6 +352,7 @@ h1 {
   height: 100%;
 }
 
-.search>.search-box>span:nth-child(1) {
+.search>.search-box>span:nth-child(1),
+.search>.search-box>span:nth-child(1)>input {
   width: 100%;
 }
