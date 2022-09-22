@@ -1,0 +1,95 @@
+section {
+    position: relative;
+}
+
+section#hero {
+    overflow: hidden;
+    background-color: #eee;
+}
+
+section#hero>img {
+    user-select: none;
+    pointer-events: none;
+}
+
+section#hero>img.hero {
+    width: 100% !important;
+    object-fit: cover;
+    object-position: 50% center;
+    height: 500px;
+
+}
+
+section#hero>img.spin {
+    width: 290px;
+    position: absolute;
+    top: 46.5%;
+    left: 49.8%;
+    transform: translate(-50%, -50%);
+    animation: rotate 15000ms 2000ms linear infinite;
+    transform-origin: top left;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+
+    to {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+section#hero>header {
+    position: absolute;
+    left: var(--page-padding);
+    top: 2rem;
+    background-color: var(--clr-orange-20);
+    padding: .65rem;
+    border-radius: 1rem;
+}
+
+section#hero>header>h1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-weight: 400;
+}
+
+section#hero>header>h1>span:nth-child(1) {
+    grid-area: 1/1/2/3
+}
+
+section#hero>img.hero-mobile {
+    display: block;
+    visibility: visible;
+}
+
+section#hero>.tagline {
+    height: 2.25rem;
+    position: absolute;
+    bottom: 0;
+    left: 25vw;
+    transform-origin: center left;
+    transform: rotateZ(-45deg);
+}
+
+section#hero>.tagline>img {
+    height: 100%;
+}
+
+section#hero>img.hero-desktop {
+    display: none;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+    section#hero>img.hero-mobile {
+        display: none;
+        visibility: hidden;
+    }
+
+    section#hero>img.hero-desktop {
+        display: block;
+        visibility: visible;
+    }
+}

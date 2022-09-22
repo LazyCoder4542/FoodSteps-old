@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 300;
+    src: local('SF Compact Display'), url('sf-compact-display-thin.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    src: local('SF Compact Display'), url('sf-compact-display-medium.woff') format('woff');
+}

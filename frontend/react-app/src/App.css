@@ -1,0 +1,350 @@
+/* variables */
+:root {
+  /* fonts */
+  --ff-header: BioRhyme;
+  --ff-content: SF Compact Display;
+
+  /* colours */
+  --clr-white: #FFFFFF;
+  --clr-link: #3633F8;
+  --clr-orange-100: #FF6700;
+  --clr-orange-80: #FD8331;
+  --clr-orange-50: #FAAD7A;
+  --clr-orange-20: #F7D9C4;
+  --clr-orange-5: #F6EEE9;
+  --clr-black-100: #17181C;
+  --clr-black-80: #434447;
+  --clr-black-50: #858688;
+  --clr-black-20: #C9C9CA;
+  --clr-black-5: #EAEAEA;
+  --clr-black-5-50: #EAEAEA88;
+  --clr-yellow-100: #FFD300;
+  --clr-yellow-80: #FDDA31;
+  --clr-yellow-50: #FAE37A;
+  --clr-yellow-20: #F7EEC4;
+  --clr-yellow-5: #F6F4E9;
+
+  /* Page Padding */
+  --page-padding: 1rem;
+
+}
+
+/* shows all light mode elements */
+:root .light {
+  display: block;
+}
+
+/* hides all dark mode elements */
+:root .dark {
+  display: none;
+}
+
+:root[data-theme=dark] {
+  /* SWITCH CASES FOR DARK MODE */
+  /* waiting for designers to update this */
+  --clr-white: #17181C;
+  --clr-link: #3633F8;
+  --clr-orange-100: #FF6700;
+  --clr-orange-80: #FD8331;
+  --clr-orange-50: #FAAD7A;
+  --clr-orange-20: #F7D9C4;
+  --clr-orange-5: #F6EEE9;
+  --clr-black-100: #FFFFFF;
+  --clr-black-80: #434447;
+  --clr-black-50: #858688;
+  --clr-black-20: #C9C9CA;
+  --clr-black-5: #EAEAEA;
+  --clr-yellow-100: #FFD300;
+  --clr-yellow-80: #FDDA31;
+  --clr-yellow-50: #FAE37A;
+  --clr-yellow-20: #F7EEC4;
+  --clr-yellow-5: #F6F4E9;
+}
+
+/* shows all dark mode elements */
+:root[data-theme=dark] .dark {
+  display: block;
+}
+
+/* hides all light mode elements */
+:root[data-theme=dark] .light {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--clr-black-100);
+  font-family: var(--ff-content);
+  background-color: var(--clr-white);
+  min-height: 200vh;
+}
+
+input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  caret-color: var(--clr-black-20);
+  padding: .2rem .5rem;
+  background-color: transparent;
+}
+
+a {
+  all: unset
+}
+
+.sticky {
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--clr-black-5-50);
+  backdrop-filter: blur(12px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-header);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+/*img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* site header */
+#site-header {
+  --padding: .5rem var(--page-padding);
+  width: 100%;
+  filter: blur(0px);
+  transition-property: background-color, filter;
+  transition-duration: 500ms;
+  position: relative;
+  z-index: 20;
+}
+
+#site-header>.wrapper1,
+#site-header>.wrapper2 {
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#site-header>.wrapper1 {
+  border-bottom: 1px solid var(--clr-black-5)
+}
+
+#site-header>.wrapper1>.icon {
+  height: 2rem;
+  display: inline-flex;
+}
+
+#site-header>.wrapper1>.toggle-theme>span {
+  display: inline-flex;
+  height: 2.5rem;
+  padding: .5rem;
+  background-color: var(--clr-orange-20);
+  border-radius: 50%;
+}
+
+
+#site-header>.wrapper2 {
+  column-gap: 2rem;
+}
+
+#site-header>.wrapper2>.menu>.hamburger {
+  cursor: pointer;
+}
+
+#site-header>.wrapper2>.menu>.hamburger>svg>path {
+  transition: stroke 500ms;
+}
+
+#site-header>.wrapper2>.menu>.hamburger:hover>svg>path {
+  stroke: var(--clr-orange-80);
+}
+
+#site-header>.wrapper2>.menu>.header-nav {
+  position: fixed;
+  display: flex;
+  opacity: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  transform: translateX(-100%);
+  overflow: hidden;
+  transition-property: transform, opacity;
+  transition-duration: 300ms;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: var(--clr-yellow-50);
+  border-radius: 0 1rem 1rem 0;
+  padding: 1rem;
+  width: 75vw;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.close {
+  margin: 0 0 50px auto;
+  cursor: pointer;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>.icon {
+  height: 2rem;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>.icon>img {
+  height: 100%;
+  margin: auto;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>.search>.search-box {
+  flex-direction: row-reverse;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>li {
+  list-style: none;
+  padding: 1rem;
+}
+
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>li+li {
+  border-top: 1px solid var(--clr-black-20)
+}
+
+#site-header>.wrapper2>.menu.active>.header-nav {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+
+
+/*.container {
+  position: relative;
+  z-index: -1;
+}*/
+
+.styled-scrollbars {
+  margin-bottom: 25px;
+  overflow-y: scroll;
+}
+
+.styled-scrollbars::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  border-radius: 10px;
+  background-color: var(--clr-white);
+}
+
+.styled-scrollbars::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+.styled-scrollbars::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: var(--clr-orange-80);
+}
+
+.dropdown-primary {
+  background-color: var(--clr-yellow-100);
+  border-radius: 1rem;
+  padding: 1.75rem 0.875rem
+}
+
+.dropdown-primary>ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.dropdown-primary>ul>li {
+  list-style: none;
+  width: 100%;
+  color: var(--clr-black-50);
+  padding: 1rem;
+}
+
+.dropdown-primary>ul>li+li {
+  border-top: 1.5px solid var(--clr-black-20)
+}
+
+/* use this class to align svg to the center their wrapper horizontally and vertically */
+.svg-wrapper {
+  display: flex;
+  place-items: center;
+}
+
+/* SEARCH COMPONENT */
+.search {
+  width: 100%;
+}
+
+.search>.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .5rem;
+  border-radius: .5rem;
+  box-shadow: 0px 12px 24px -10px #b3b6ba44;
+  position: relative;
+  background-color: var(--clr-white);
+}
+
+.search>.search-box::after {
+  display: block;
+  content: "";
+  left: 0;
+  width: 0%;
+  height: 0%;
+  border-radius: inherit;
+  z-index: -1;
+  position: absolute;
+  transition-property: width, height;
+  transition-duration: 500ms;
+}
+
+.search>.search-box:focus-within::after {
+  outline: 2px solid var(--clr-orange-50);
+  width: 100%;
+  height: 100%;
+}
+
+.search>.search-box>span:nth-child(1) {
+  width: 100%;
+}
