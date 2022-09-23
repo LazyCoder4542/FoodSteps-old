@@ -89,13 +89,18 @@ section#featured>.wrapper {
 
 section#featured>.wrapper>.post-cards {
     display: flex;
+    gap: 2.75rem
 }
 
 section#featured>.wrapper>.post-cards>.card {
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 18rem;
     padding: 1rem;
     border-radius: 1rem;
+    background-color: var(--clr-primary1-5);
 }
 
 section#featured>.wrapper>.post-cards>.card>.post-img {
@@ -115,16 +120,39 @@ section#featured>.wrapper>.post-cards>.card>.post-details {
     text-align: center;
     display: flex;
     flex-direction: column;
-    row-gap: .5rem;
+    row-gap: 1rem;
     align-items: center;
 }
 
 section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
-    background-color: var(--clr-neutral-5);
+    height: 40px;
+    place-items: center;
+    background-color: var(--clr-white);
     padding: .5rem;
-    display: table;
+    display: inline-flex;
     border-radius: .5rem;
     font-size: .9rem;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details>.interactions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>nav {
+    margin-right: auto;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>.like {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>.like>span:nth-child(1) {
+    color: var(--clr-primary1-100);
 }
 
 @media screen and (min-width: 1024px) {
