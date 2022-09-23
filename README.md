@@ -55,9 +55,10 @@ To be updated as we progress
    - Create a Folder on your Local machine / Computer for the project Workspace
    - Open Command prompt / Terminal in the same folder location
    - In your Terminal, type:
-     `git clone url of the forked repo`
+     `git clone url of the your forked repo`
    - once you have cloned to the folder, start coding.
    - Add your changes using: `git add .`
+   `git remote add upstream https://github.com/just-projects-team-7/foodsteps.git`
    - Create a new branch by following the following steps:
      `git branch name of branch`
      `git branch --v`
