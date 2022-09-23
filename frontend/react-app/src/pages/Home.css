@@ -44,12 +44,13 @@ section#hero>header {
     position: absolute;
     left: var(--page-padding);
     top: 2rem;
-    background-color: var(--clr-orange-20);
+    background-color: var(--clr-primary1-5);
     padding: .65rem;
     border-radius: 1rem;
 }
 
 section#hero>header>h1 {
+    color: var(--clr-primary1-100);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     font-weight: 400;
@@ -119,7 +120,7 @@ section#featured>.wrapper>.post-cards>.card>.post-details {
 }
 
 section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
-    background-color: var(--clr-black-5);
+    background-color: var(--clr-neutral-5);
     padding: .5rem;
     display: table;
     border-radius: .5rem;
