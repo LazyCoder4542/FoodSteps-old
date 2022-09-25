@@ -10,9 +10,6 @@ class Header extends Component {
   state = {
     menuOpen: false,
   };
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <React.Fragment>

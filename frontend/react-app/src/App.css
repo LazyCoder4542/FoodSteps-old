@@ -83,6 +83,7 @@ body {
   font-family: var(--ff-content);
   background-color: var(--clr-white);
   min-height: 100vh;
+  font-weight: 400;
 }
 
 input {
@@ -131,7 +132,11 @@ h1 {
   font-size: 2rem;
   line-height: 2.5rem;
 }
-
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+}
 /*img {
   height: 100%;
   width: 100%;

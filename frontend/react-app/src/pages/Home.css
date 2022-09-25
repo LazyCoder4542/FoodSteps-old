@@ -85,30 +85,67 @@ section#hero>img.hero-desktop {
 
 section#featured>.wrapper {
     overflow-y: auto;
+    margin-right: calc(-1 * var(--page-padding));
+    margin-left: calc(-1 * var(--page-padding));
 }
 
 section#featured>.wrapper>.post-cards {
-    display: flex;
+    padding-inline: var(--page-padding);
+    display: inline-flex;
     gap: 2.75rem
 }
 
-section#featured>.wrapper>.post-cards>.card {
+section#featured>.wrapper>.post-cards>.mini-post {
+    width: 18rem;
+}
+
+section#popular>.wrapper {
+    overflow-y: auto;
+    margin-right: calc(-1 * var(--page-padding));
+    margin-left: calc(-1 * var(--page-padding));
+}
+
+section#popular>.wrapper>.post-cards {
+    padding-inline: var(--page-padding);
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2.75rem
+}
+
+section#popular>.wrapper>.post-cards>.mini-post {
+    height: 23.75rem;
+    flex-direction: row;
+}
+section#popular>.wrapper>.post-cards>.mini-post>.post-img {
+    flex-basis: 100%;
+    height: 100%;
+    width: 30rem;
+}
+
+section#popular>.wrapper>.post-cards>.mini-post>.post-img>img {
+    width: 100%;
+}
+section#popular>.wrapper>.post-cards>.mini-post>.post-details {
+    flex-basis: 100%;
+    text-align: left;
+    align-items: flex-start;
+}
+.mini-post {
     flex-shrink: 0;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 2rem;
-    width: 18rem;
     padding: 1rem;
     border-radius: 1rem;
     background-color: var(--clr-primary1-5);
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-img {
+.mini-post>.post-img {
     height: 12rem;
     border-radius: inherit;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-img>img {
+.mini-post>.post-img>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -116,15 +153,17 @@ section#featured>.wrapper>.post-cards>.card>.post-img>img {
     object-position: center;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-details {
+.mini-post>.post-details {
     text-align: center;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
 }
-
-section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
+.mini-post>.post-details>.post-description {
+    margin-bottom: auto;
+}
+.mini-post>.post-details>.post-author {
     height: 40px;
     place-items: center;
     background-color: var(--clr-white);
@@ -134,24 +173,25 @@ section#featured>.wrapper>.post-cards>.card>.post-details>.post-author {
     font-size: .9rem;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-details>.interactions {
+.mini-post>.post-details>.interactions {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>nav {
+.mini-post>.post-details>.interactions>nav {
     margin-right: auto;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>.like {
+.mini-post>.post-details>.interactions>.like {
     display: inline-flex;
     align-items: center;
     column-gap: 6px;
+    cursor: pointer;
 }
 
-section#featured>.wrapper>.post-cards>.card>.post-details>.interactions>.like>span:nth-child(1) {
+.mini-post>.post-details>.interactions>.like>span:nth-child(1) {
     color: var(--clr-primary1-100);
 }
 
