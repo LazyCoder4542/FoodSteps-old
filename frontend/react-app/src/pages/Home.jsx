@@ -124,7 +124,7 @@ class HomePage extends Component {
           <header>
             <h1>Popular Posts</h1>
           </header>
-          <div className="wrapper">
+          <div className="wrapper1">
             <div className="post-cards">
               <div className="mini-post">
                 <div className="post-img">
@@ -210,44 +210,41 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
+          <div className="wrapper2">
+            <div className="popular-links">
+              <nav>
+                <a href="#" className="link">
+                  <h3>Is Beans Protein or Carbohydrate?</h3>
+                </a>
+              </nav>
+              <nav>
+                <a href="#" className="link">
+                  <h3>Is Beans Protein or Carbohydrate?</h3>
+                </a>
+              </nav>
+              <nav>
+                <a href="#" className="link">
+                  <h3>Is Beans Protein or Carbohydrate?</h3>
+                </a>
+              </nav>
+              <nav>
+                <a href="#" className="link">
+                  <h3>Is Beans Protein or Carbohydrate?</h3>
+                </a>
+              </nav>
+              <nav>
+                <a href="#" className="link">
+                  <h3>Is Beans Protein or Carbohydrate?</h3>
+                </a>
+              </nav>
+            </div>
+          </div>
         </section>
         <section id="team">
           <header>
             <h1>Meet the team</h1>
           </header>
           <div className="wrapper">
-            <div className="post-cards">
-              <div className="mini-post">
-                <div className="post-img">
-                  <img src="images/test1.png" alt="" />
-                </div>
-                <div className="post-details">
-                  <h2 className="post-title">How to Cook</h2>
-                  <p className="post-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique, nobis!
-                  </p>
-                  <div className="post-author">
-                    By&nbsp;<span className="author">Food Arts</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mini-post">
-                <div className="post-img">
-                  <img src="images/test1.png" alt="" />
-                </div>
-                <div className="post-details">
-                  <h2 className="post-title">How to Cook</h2>
-                  <p className="post-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique, nobis!
-                  </p>
-                  <div className="post-author">
-                    By&nbsp;<span className="author">Food Arts</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </React.Fragment>
