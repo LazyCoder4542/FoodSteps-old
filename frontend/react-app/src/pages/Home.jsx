@@ -3,6 +3,17 @@ import React, { Component } from "react";
 import "./Home.css";
 class HomePage extends Component {
   state = {};
+  componentDidMount() {
+    var time = 100000
+    var members = document.querySelector('.team');
+    members.style.animationDuration = `${time}ms`;
+    var membersClone = members.cloneNode('true');
+    membersClone.classList.add('copy');
+    members.parentElement.appendChild(membersClone);
+    members.style.animationName = 'slide';
+    membersClone.style.animationName = 'slide';
+    membersClone.style.animationDelay = `${time / 2}ms`;
+  }
   render() {
     return (
       <React.Fragment>
@@ -245,6 +256,158 @@ class HomePage extends Component {
             <h1>Meet the team</h1>
           </header>
           <div className="wrapper">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quos magnam ex, ducimus atque molestiae ullam inventore ea quam recusandae fugit, odit soluta? Nulla aliquid quos doloribus impedit, dolorem ratione?...
+              </p>
+            </div>
+            <div className="team-slider">
+              <div className="team">
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Adewole Mohammed"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Adewole Mohammed</h3>
+                    </span>
+                    <span>
+                      <p>Product Designer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="AZdesignUX"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>AZdesignUX</h3>
+                    </span>
+                    <span>
+                      <p>Product Designer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Genevieve Ikechukwu"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Genevieve Ikechukwu</h3>
+                    </span>
+                    <span>
+                      <p>Backend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Nectuzzy"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Nectuzzy</h3>
+                    </span>
+                    <span>
+                      <p>Backend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Oredein Oluwatoyin"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Oredein Oluwatoyin</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer, <span>Team Lead</span></p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Funsho Akinbile"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Funsho Akinbile</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Fadare Adeola"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Fadare Adeola</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Marian Nwoke"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Marian Nwoke</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Nnenna Odo"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Nnenna Odo</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Owen Adoga"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Owen Adoga</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Tolu Ajao"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Tolu Ajao</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </React.Fragment>
