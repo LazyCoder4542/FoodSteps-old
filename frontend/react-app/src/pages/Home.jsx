@@ -38,7 +38,7 @@ class HomePage extends Component {
                   <img src="images/test1.png" alt="" />
                 </div>
                 <div className="post-details">
-                  <h2 className="post-title">How to Make Soup</h2>
+                  <h2 className="post-title">Ho to Make Soup</h2>
                   <p className="post-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Similique, nobis!
