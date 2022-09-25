@@ -1,14 +1,7 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 
-class Categories extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {};
-  render() {
-    return <h1>Categories</h1>;
-  }
+function Categories() {
+  return <h1>Categories</h1>;
 }
 
 export default Categories;

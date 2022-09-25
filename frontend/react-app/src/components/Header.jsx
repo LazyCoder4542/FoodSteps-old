@@ -1,84 +1,49 @@
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
+import Overlay from "./Overlay";
+
+import logo from "../assets/images/logo.svg";
+import moon from "../assets/images/moon.svg";
+import sun from "../assets/images/sun.svg";
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
+  state = {
+    menuOpen: false,
+  };
   render() {
     return (
-      <header id="site-header">
-        <div className="wrapper1">
-          <div className="icon">
-            <img src="icons/logo.svg" alt="logo" />
-          </div>
-          <ToggleTheme handleClick={this.props.themetoggler} />
-        </div>
-        <div className="wrapper2">
-          <div className="menu">
-            <div
-              className="hamburger svg-wrapper"
-              onClick={() => {
-                let elem = document
-                  .querySelector("#site-header")
-                  .querySelector(".menu");
-                elem.classList.add("active");
-              }}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22 10.9V4.1C22 2.6 21.36 2 19.77 2H15.73C14.14 2 13.5 2.6 13.5 4.1V10.9C13.5 12.4 14.14 13 15.73 13H19.77C21.36 13 22 12.4 22 10.9Z"
-                  stroke="#17181C"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M22 19.9V18.1C22 16.6 21.36 16 19.77 16H15.73C14.14 16 13.5 16.6 13.5 18.1V19.9C13.5 21.4 14.14 22 15.73 22H19.77C21.36 22 22 21.4 22 19.9Z"
-                  stroke="#17181C"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M10.5 13.1V19.9C10.5 21.4 9.86 22 8.27 22H4.23C2.64 22 2 21.4 2 19.9V13.1C2 11.6 2.64 11 4.23 11H8.27C9.86 11 10.5 11.6 10.5 13.1Z"
-                  stroke="#17181C"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M10.5 4.1V5.9C10.5 7.4 9.86 8 8.27 8H4.23C2.64 8 2 7.4 2 5.9V4.1C2 2.6 2.64 2 4.23 2H8.27C9.86 2 10.5 2.6 10.5 4.1Z"
-                  stroke="#17181C"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+      <React.Fragment>
+        <header id="site-header">
+          <Overlay
+            hidden={!this.state.menuOpen}
+            onClick={() => {
+              let elem = document
+                .querySelector("#site-header")
+                .querySelector(".menu");
+              elem.classList.remove("active");
+              this.setState({
+                menuOpen: false,
+              });
+            }}
+          />
+          <div className="wrapper1">
+            <div className="icon">
+              <img src={logo} alt="logo" />
             </div>
-            <div
-              className="header-nav"
-              onClick={(e) => {
-                if (e.target.tagName == "A")
-                  document
-                    .querySelector("#site-header")
-                    .querySelector(".menu")
-                    .classList.remove("active");
-              }}
-            >
+            <ToggleTheme handleClick={this.props.themetoggler} />
+          </div>
+          <div className="wrapper2">
+            <div className="menu">
               <div
-                className="close"
+                className="hamburger svg-wrapper"
                 onClick={() => {
                   let elem = document
                     .querySelector("#site-header")
                     .querySelector(".menu");
-                  elem.classList.remove("active");
+                  elem.classList.add("active");
+                  this.setState({
+                    menuOpen: true,
+                  });
                 }}
               >
                 <svg
@@ -89,21 +54,28 @@ class Header extends Component {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M14.9 2H9.10001C8.42001 2 7.46 2.4 6.98 2.88L2.88 6.98001C2.4 7.46001 2 8.42001 2 9.10001V14.9C2 15.58 2.4 16.54 2.88 17.02L6.98 21.12C7.46 21.6 8.42001 22 9.10001 22H14.9C15.58 22 16.54 21.6 17.02 21.12L21.12 17.02C21.6 16.54 22 15.58 22 14.9V9.10001C22 8.42001 21.6 7.46001 21.12 6.98001L17.02 2.88C16.54 2.4 15.58 2 14.9 2Z"
+                    d="M22 10.9V4.1C22 2.6 21.36 2 19.77 2H15.73C14.14 2 13.5 2.6 13.5 4.1V10.9C13.5 12.4 14.14 13 15.73 13H19.77C21.36 13 22 12.4 22 10.9Z"
                     stroke="#17181C"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
-                    d="M8.5 15.5L15.5 8.5"
+                    d="M22 19.9V18.1C22 16.6 21.36 16 19.77 16H15.73C14.14 16 13.5 16.6 13.5 18.1V19.9C13.5 21.4 14.14 22 15.73 22H19.77C21.36 22 22 21.4 22 19.9Z"
                     stroke="#17181C"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
-                    d="M15.5 15.5L8.5 8.5"
+                    d="M10.5 13.1V19.9C10.5 21.4 9.86 22 8.27 22H4.23C2.64 22 2 21.4 2 19.9V13.1C2 11.6 2.64 11 4.23 11H8.27C9.86 11 10.5 11.6 10.5 13.1Z"
+                    stroke="#17181C"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M10.5 4.1V5.9C10.5 7.4 9.86 8 8.27 8H4.23C2.64 8 2 7.4 2 5.9V4.1C2 2.6 2.64 2 4.23 2H8.27C9.86 2 10.5 2.6 10.5 4.1Z"
                     stroke="#17181C"
                     strokeWidth="1.5"
                     strokeLinecap="round"
@@ -111,36 +83,93 @@ class Header extends Component {
                   />
                 </svg>
               </div>
-              <div className="wrapper">
-                <div className="icon">
-                  <img src="icons/logo.svg" alt="logo" />
+              <div
+                className="header-nav"
+                onClick={(e) => {
+                  if (e.target.tagName === "A") {
+                    document
+                      .querySelector("#site-header")
+                      .querySelector(".menu")
+                      .classList.remove("active");
+                    this.setState({
+                      menuOpen: false,
+                    });
+                  }
+                }}
+              >
+                <div
+                  className="close"
+                  onClick={() => {
+                    let elem = document
+                      .querySelector("#site-header")
+                      .querySelector(".menu");
+                    elem.classList.remove("active");
+                    this.setState({
+                      menuOpen: false,
+                    });
+                  }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9 2H9.10001C8.42001 2 7.46 2.4 6.98 2.88L2.88 6.98001C2.4 7.46001 2 8.42001 2 9.10001V14.9C2 15.58 2.4 16.54 2.88 17.02L6.98 21.12C7.46 21.6 8.42001 22 9.10001 22H14.9C15.58 22 16.54 21.6 17.02 21.12L21.12 17.02C21.6 16.54 22 15.58 22 14.9V9.10001C22 8.42001 21.6 7.46001 21.12 6.98001L17.02 2.88C16.54 2.4 15.58 2 14.9 2Z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M8.5 15.5L15.5 8.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M15.5 15.5L8.5 8.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
-                <Search />
-                <ul>
-                  <li>
-                    <NavLink to="/" end>
-                      Home
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/categories">Categories</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/about">About</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/contact-us">Contact Us</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/write-for-us">Write for us</NavLink>
-                  </li>
-                </ul>
+                <div className="wrapper">
+                  <div className="icon">
+                    <img src={logo} alt="logo" />
+                  </div>
+                  <Search />
+                  <ul>
+                    <li>
+                      <NavLink to="/" end>
+                        Home
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/categories">Categories</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/about">About</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/contact-us">Contact Us</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/write-for-us">Write for us</NavLink>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <Search />
           </div>
-          <Search />
-        </div>
-      </header>
+        </header>
+      </React.Fragment>
     );
   }
 }
@@ -186,8 +215,8 @@ function ToggleTheme(props) {
   return (
     <div className="toggle-theme" onClick={props.handleClick}>
       <span>
-        <img src="icons/moon.svg" alt="theme-icon" className="light" />
-        <img src="icons/sun.svg" alt="theme-icon" className="dark" />
+        <img src={moon} alt="theme-icon" className="light" />
+        <img src={sun} alt="theme-icon" className="dark" />
       </span>
     </div>
   );

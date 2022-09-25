@@ -1,14 +1,7 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 
-class ContactUs extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {};
-  render() {
-    return <h1>Contact Us</h1>;
-  }
+function ContactUs() {
+  return <h1>ContactUs</h1>;
 }
 
 export default ContactUs;
