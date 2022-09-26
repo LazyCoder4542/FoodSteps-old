@@ -265,19 +265,6 @@ class HomePage extends Component {
               <div className="team">
                 <div className="team-member">
                   <div className="profile-pic">
-                    <img className="fit" src="images/test1.png" alt="Adewole Mohammed"/>
-                  </div>
-                  <div className="details">
-                    <span>
-                      <h3>Adewole Mohammed</h3>
-                    </span>
-                    <span>
-                      <p>Product Designer</p>
-                    </span>
-                  </div>
-                </div>
-                <div className="team-member">
-                  <div className="profile-pic">
                     <img className="fit" src="images/test1.png" alt="AZdesignUX"/>
                   </div>
                   <div className="details">
@@ -348,6 +335,32 @@ class HomePage extends Component {
                   <div className="details">
                     <span>
                       <h3>Fadare Adeola</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Abioye Kehinde"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Abioye Kehinde</h3>
+                    </span>
+                    <span>
+                      <p>Frontend Developer</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="team-member">
+                  <div className="profile-pic">
+                    <img className="fit" src="images/test1.png" alt="Adewole Mohammed"/>
+                  </div>
+                  <div className="details">
+                    <span>
+                      <h3>Adewole Mohammed</h3>
                     </span>
                     <span>
                       <p>Frontend Developer</p>
