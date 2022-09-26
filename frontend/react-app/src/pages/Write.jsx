@@ -1,14 +1,7 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 
-class Write extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {};
-  render() {
-    return <h1>Write for Us</h1>;
-  }
+function Write() {
+  return <h1>Write for Us</h1>;
 }
 
 export default Write;
