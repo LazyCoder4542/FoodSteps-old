@@ -28,5 +28,8 @@ class UserAdminConfig(UserAdmin):
 
 
 admin.site.register(author, UserAdminConfig)  
+
+
+
 admin.site.register(post)  
 admin.site.register(Category)
