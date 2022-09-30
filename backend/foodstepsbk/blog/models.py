@@ -22,7 +22,7 @@ class author(AbstractBaseUser, PermissionsMixin):
         'Tell us something about you.'), max_length=500, blank=True)
     slug = models.SlugField(blank=True, unique=True)
     profile_picture = models.ImageField(blank=True)
-    country = models.CharField(_('select_country'), null=True, max_length=20)
+    country = models.CharField(_('Enter_country'), null=True, max_length=20)
     state = models.CharField(max_length=25, blank=False)
     start_date = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
@@ -68,7 +68,8 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-# post
+
+# # post
 
 
 def upload_to(instance, filename):
@@ -80,21 +81,23 @@ class post(models.Model):
         ("published", "Published"),
     )
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="post_category", blank=True, null=True,
+        Category, on_delete=models.CASCADE, related_name="post_category", blank=False
     )
     title = models.CharField(max_length=250)
     slug = models.SlugField(
         max_length=250, blank=True, null=True, unique_for_date="publish"
     )
     author = models.ForeignKey(author, on_delete=models.CASCADE, related_name="blog_posts_author",
-     blank=True, null=True)
-    post = models.TextField(blank=False, null=True)
+     blank=False)
+    tag = models.CharField(_('Enter your keywords, enter about 5 keywords'), max_length=200,
+    blank=True, null=True)
+    body = models.TextField(blank=False, null=True)
     image = models.ImageField(_("Image"), upload_to=upload_to, blank=True, null=True)
     publish = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default="draft")
     objects = models.Manager()  # The default manager.
-    published = PublishedManager()  # Our custom manager.
+    published = PublishedManager()  # Our custom manager. 
 
 
     class Meta:
@@ -105,7 +108,7 @@ class post(models.Model):
         random_slug = slugify(self.title)
 
         while author.objects.filter(slug=random_slug).exists():
-            random_slug = slugify(self.title + utils.gen_random_id())
+            random_slug = slugify(self.title)
         return random_slug
 
     def save(self, *args, **kwargs):
@@ -113,7 +116,7 @@ class post(models.Model):
         # create slug
             self.slug = self.gen_random_slug()
         # save
-        super().save(*args, **kwargs)
+        super(post, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title
