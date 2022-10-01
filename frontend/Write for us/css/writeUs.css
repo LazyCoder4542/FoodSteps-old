@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #eceaea;
+  font-family: "BioRhyme", serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+img {
+  max-width: 8%;
+}
+h1 {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  -webkit-text-stroke: 1px #5c1010;
+  text-shadow: 1px 16px 25px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.6em;
+}
+h1::before {
+  content: "| ";
+  -webkit-text-stroke: none;
+  font-size: 1.8rem;
+  color: #5c1010;
+}
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.text {
+  margin: 5em auto 3em;
+  text-align: center;
+}
+.form {
+  text-align: center;
+}
+input[type="password"],
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  margin-bottom: 1.5em;
+  padding: 0.4375em 6.8125em 0.5em 0.875em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+::-webkit-input-placeholder {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+.password-container {
+  width: 100%;
+  position: relative;
+}
+.password-container img {
+  position: absolute;
+  bottom: 43%;
+  right: 4%;
+  cursor: pointer;
+}
+.btn {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #5c1010;
+  border: none;
+  border-radius: 32px;
+  padding: 1em 2.75em;
+  margin-top: 2em;
+}
+.btn:hover {
+  cursor: pointer;
+  color: #5c1010;
+  border: 2px solid #5c1010;
+  background-color: #eaeaea;
+}
+@media (min-width: 375px) {
+  .password-container img {
+    bottom: 40%;
+    width: 6%;
+  }
+}
+@media (min-width: 550px) {
+  .password-container img {
+    bottom: 33%;
+    width: 6%;
+  }
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.8125rem;
+  }
+  h1::before {
+    font-size: 3rem;
+  }
+  .text {
+    margin-bottom: 5em;
+  }
+  .flex {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+  }
+
+  .password-container img {
+    bottom: 38%;
+    width: 6%;
+  }
+}
