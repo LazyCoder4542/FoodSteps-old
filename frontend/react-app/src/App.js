@@ -13,6 +13,7 @@ import Page404 from "./pages/404";
 
 // IMPORTING COMPONENTS
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 class App extends Component {
   state = {}
   constructor() {
@@ -75,6 +76,7 @@ class App extends Component {
             } />
           </Routes>
         </div>
+        <Footer />
       </Router >
     );
   }
