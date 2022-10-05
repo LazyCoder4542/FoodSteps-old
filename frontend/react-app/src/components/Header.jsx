@@ -151,8 +151,11 @@ class Header extends Component {
                         Home
                       </NavLink>
                     </li>
-                    <li>
-                      <NavLink to="/categories">Categories</NavLink>
+                    <li class="categories">
+                      Categories
+                      <ul>
+                        <li><NavLink to="categories"></NavLink></li>
+                      </ul>
                     </li>
                     <li>
                       <NavLink to="/about">About</NavLink>

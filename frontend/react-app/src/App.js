@@ -59,9 +59,15 @@ class App extends Component {
             <Route exact path="/" element={
               <HomePage />
             } />
-            <Route path="/categories" element={
-              <Categories />
-            } />
+            <Route
+              loader={({ params }) => {
+                params.category;
+              }}
+              action={({ params }) => {
+                params.category;
+              }}
+              element={<Categories />}
+            />;
             <Route path="/about" element={
               <About />
             } />
