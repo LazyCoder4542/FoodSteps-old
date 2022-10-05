@@ -16,7 +16,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
-  state = {}
+  state = {
+    allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"]
+  }
   constructor() {
     super()
     if (window.matchMedia) {
@@ -55,21 +57,15 @@ class App extends Component {
     return (
       <Router>
         <ScrollToTop>
-          <Header themetoggler={this.themetoggler} />
+          <Header themetoggler={this.themetoggler} categories={this.state.allCategories}/>
           <div className="container">
             <Routes>
               <Route exact path="/" element={
                 <HomePage />
               } />
-              {/* <Route
-                loader={({ params }) => {
-                  params.category;
-                }}
-                action={({ params }) => {
-                  params.category;
-                }}
-                element={<Categories />}
-              />; */}
+              <Route path="/category">
+                <Route path=":categoryName" element={<Categories categories={this.state.allCategories} />} />
+              </Route>
               <Route path="/about" element={
                 <About />
               } />

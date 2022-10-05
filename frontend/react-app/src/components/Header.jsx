@@ -151,11 +151,16 @@ class Header extends Component {
                         Home
                       </NavLink>
                     </li>
-                    <li class="categories">
+                    <li className="categories">
                       Categories
-                      <ul>
-                        <li><NavLink to="categories"></NavLink></li>
-                      </ul>
+                      {this.props.categories
+                      ? (<ul>
+                        {this.props.categories.map((itm, id) => {
+                          return (<li key={id + 1}><NavLink to={`/category/${encodeURIComponent(itm)}`}>{itm}</NavLink></li>)
+                        })}
+                      </ul>)
+                      : null
+                      }
                     </li>
                     <li>
                       <NavLink to="/about">About</NavLink>
