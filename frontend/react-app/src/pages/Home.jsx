@@ -23,11 +23,6 @@ class HomePage extends Component {
             className="hero hero-mobile"
             alt="hero"
           />
-          <img
-            src="images/hero-desktop.png"
-            className="hero hero-desktop"
-            alt="hero"
-          />
           <img src="images/spin.png" className="spin" alt="" />
           <header>
             <h1>

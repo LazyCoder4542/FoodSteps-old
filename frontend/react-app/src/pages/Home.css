@@ -276,13 +276,31 @@ section#team>.wrapper>.team-slider>.team>.team-member>.details {
 }
 
 @media screen and (min-width: 1024px) {
-    section#hero>img.hero-mobile {
+    section#hero>img.spin {
         display: none;
-        visibility: hidden;
     }
-
-    section#hero>img.hero-desktop {
-        display: block;
-        visibility: visible;
+    section#hero>header>h1 {
+        color: var(--clr-primary1-100);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-weight: 700;
+        font-size: 2.8rem;
+    }
+    section#hero>header>h1 {
+        gap: 5px 10px;
+    }
+    section#hero>header>h1>span:nth-child(1) {
+        grid-area: 1/1/2/2
+    }
+    section#hero>.tagline {
+        height: 4rem;
+        bottom: auto;
+        top: 45%;
+        left: auto;
+        right: 9vw;
+        opacity: 0.6;
+        transform-origin: center left;
+        transform: rotateZ(-45deg);
+        /*transform: none;*/
     }
 }

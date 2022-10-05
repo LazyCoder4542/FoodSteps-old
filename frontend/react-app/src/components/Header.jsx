@@ -30,6 +30,7 @@ class Header extends Component {
             <div className="icon">
               <img src={logo} alt="logo" />
             </div>
+            <Search />
             <ToggleTheme handleClick={this.props.themetoggler} />
           </div>
           <div className="wrapper2">
@@ -183,7 +184,7 @@ class Search extends Component {
             <input
               type="text"
               name="blog-search"
-              id="blog-search"
+              className="blog-search"
               placeholder="search"
             />
           </span>
