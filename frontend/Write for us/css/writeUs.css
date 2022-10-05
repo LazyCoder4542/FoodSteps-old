@@ -11,9 +11,7 @@ body {
   line-height: 1.5;
   min-height: 100vh;
 }
-img {
-  max-width: 8%;
-}
+
 h1 {
   text-transform: uppercase;
   color: #fff;
@@ -38,6 +36,9 @@ h1::before {
   margin: 5em auto 3em;
   text-align: center;
 }
+.text p {
+  font-size: 0.9rem;
+}
 .form {
   text-align: center;
 }
@@ -61,6 +62,7 @@ input[type="email"] {
   position: relative;
 }
 .password-container img {
+  max-width: 8%;
   position: absolute;
   bottom: 43%;
   right: 4%;
