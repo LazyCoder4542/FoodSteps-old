@@ -12,17 +12,17 @@ function Footer() {
                 <div className="wrapper">
                     <span>
                         <object data={twitter} type="image/svg+xml">
-                            <img src={twitter} />
+                            <img src={twitter} alt="" />
                         </object>
                     </span>
                     <span>
                         <object data={facebook} type="image/svg+xml">
-                            <img src={facebook} />
+                            <img src={facebook} alt="" />
                         </object>
                     </span>
                     <span>
                         <object data={instagram} type="image/svg+xml">
-                            <img src={instagram} />
+                            <img src={instagram} alt="" />
                         </object>
                     </span>
                 </div>
