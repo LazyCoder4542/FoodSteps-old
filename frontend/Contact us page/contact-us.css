@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=BioRhyme&display=swap');
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+
+body{
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    background: #ffffff
+}
+
+.contact-us h1{
+    font-family: 'BioRhyme', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #5c1010;
+}
+
+.P-1{
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #17181C;
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.P-2{
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #17181C;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    width: 90%;
+    max-width: 600px;
+}
+
+.input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #ffffff;
+    color:  #17181C;
+    background: #EAEAEA;;
+    font-size: 15px;
+}
+
+label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #5C1010;
+    cursor: text;
+    transition: 0.2s;
+}
+
+button{
+    padding: 10px 0;
+    color: #5C1010;
+    outline: none;
+    background: #FFC4C4;
+    border: 1px solid #C9C9CA;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label{
+    top: -35px;
+    font-size: 14px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row .input-group{
+    flex-basis: 48%;
+}
