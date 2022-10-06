@@ -511,15 +511,17 @@ p {
     background-color: var(--clr-primary1-5);
     border-radius: 1rem;
     font-weight: normal;
+    color: var(--clr-primary1-100)
   }
   #site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>.categories>ul>li {
-    padding: .5rem 0;
+    padding: 1rem 0;
+    text-align: center;
   }
   #site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>li+li {
     border: none
   }
   #site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>.categories>ul>li+li {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--clr-primary1-20);
   }
   #site-header>.wrapper2>.search {
     display: none;
