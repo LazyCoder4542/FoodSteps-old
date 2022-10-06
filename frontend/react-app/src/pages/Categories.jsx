@@ -6,7 +6,7 @@ function Categories(props) {
   const allCategories = props.categories
   let { categoryName } = useParams()
   categoryName = decodeURIComponent(categoryName)
-  if (allCategories.indexOf(categoryName) != -1) {
+  if (allCategories.indexOf(categoryName) !== -1) {
     /* Your Code Goes here */
     return (<h1>Categories &gt; {categoryName}</h1>);
   }

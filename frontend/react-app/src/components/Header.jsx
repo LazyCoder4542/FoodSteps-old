@@ -6,9 +6,11 @@ import Overlay from "./Overlay";
 import logo from "../assets/images/logo.svg";
 import moon from "../assets/images/moon.svg";
 import sun from "../assets/images/sun.svg";
+import dropdown from "../assets/icons/dropdown.svg";
 class Header extends Component {
   state = {
     menuOpen: false,
+    categoriesdropdown: false,
   };
   render() {
     return (
@@ -151,8 +153,11 @@ class Header extends Component {
                         Home
                       </NavLink>
                     </li>
-                    <li className="categories">
+                    <li className={`categories ${this.state.categoriesdropdown ? "dropped-down" : ""}`} onClick={() => {if (this.state.categoriesdropdown) {this.setState({categoriesdropdown: false})} else {this.setState({categoriesdropdown: true})}}}>
                       Categories
+                      <span>
+                        <object data={dropdown} type="image/svg+xml">drop</object>
+                      </span>
                       {this.props.categories
                       ? (<ul>
                         {this.props.categories.map((itm, id) => {

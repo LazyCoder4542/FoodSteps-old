@@ -270,6 +270,12 @@ p {
   list-style: none;
   padding: 1rem;
 }
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>.categories>ul {
+  display: none;
+}
+#site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>.categories.dropped-down>ul {
+  display: block;
+}
 
 #site-header>.wrapper2>.menu>.header-nav>.wrapper>ul>li+li {
   border-top: 1px solid var(--clr-primary1-80)
