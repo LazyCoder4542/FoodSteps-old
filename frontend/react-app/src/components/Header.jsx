@@ -154,10 +154,14 @@ class Header extends Component {
                       </NavLink>
                     </li>
                     <li className={`categories ${this.state.categoriesdropdown ? "dropped-down" : ""}`} onClick={() => {if (this.state.categoriesdropdown) {this.setState({categoriesdropdown: false})} else {this.setState({categoriesdropdown: true})}}}>
-                      Categories
-                      <span>
-                        <object data={dropdown} type="image/svg+xml">drop</object>
-                      </span>
+                      <div>
+                        <span>Categories</span>
+                        <span>
+                          <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L10.5 10.5L20 1" stroke="currentColor" strokeWidth="2"/>
+                          </svg>
+                        </span>
+                      </div>
                       {this.props.categories
                       ? (<ul>
                         {this.props.categories.map((itm, id) => {
