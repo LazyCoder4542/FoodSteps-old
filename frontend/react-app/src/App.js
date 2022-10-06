@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
   state = {
-    allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"]
+    allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"],
   }
   constructor() {
     super()
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <Router>
         <ScrollToTop>
-          <Header themetoggler={this.themetoggler} categories={this.state.allCategories}/>
+          <Header themetoggler={this.themetoggler} categories={this.state.allCategories} hidden={this.state.is404}/>
           <div className="container">
             <Routes>
               <Route exact path="/" element={
@@ -75,12 +75,10 @@ class App extends Component {
               <Route path="/write-for-us" element={
                 <Write />
               } />
-              <Route path="*" element={
-                <Page404 />
-              } />
+              <Route path="*" element={<Page404 />}/>
             </Routes>
           </div>
-          <Footer />
+          <Footer hidden={this.state.is404} />
         </ScrollToTop>
       </Router >
     );
