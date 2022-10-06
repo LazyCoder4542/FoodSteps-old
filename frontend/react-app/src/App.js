@@ -14,6 +14,7 @@ import Page404 from "./pages/404";
 // IMPORTING COMPONENTS
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
   state = {}
   constructor() {
@@ -53,36 +54,38 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header themetoggler={this.themetoggler} />
-        <div className="container">
-          <Routes>
-            <Route exact path="/" element={
-              <HomePage />
-            } />
-            <Route
-              loader={({ params }) => {
-                params.category;
-              }}
-              action={({ params }) => {
-                params.category;
-              }}
-              element={<Categories />}
-            />;
-            <Route path="/about" element={
-              <About />
-            } />
-            <Route path="/contact-us" element={
-              <ContactUs />
-            } />
-            <Route path="/write-for-us" element={
-              <Write />
-            } />
-            <Route path="*" element={
-              <Page404 />
-            } />
-          </Routes>
-        </div>
-        <Footer />
+        <ScrollToTop>
+          <Header themetoggler={this.themetoggler} />
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={
+                <HomePage />
+              } />
+              {/* <Route
+                loader={({ params }) => {
+                  params.category;
+                }}
+                action={({ params }) => {
+                  params.category;
+                }}
+                element={<Categories />}
+              />; */}
+              <Route path="/about" element={
+                <About />
+              } />
+              <Route path="/contact-us" element={
+                <ContactUs />
+              } />
+              <Route path="/write-for-us" element={
+                <Write />
+              } />
+              <Route path="*" element={
+                <Page404 />
+              } />
+            </Routes>
+          </div>
+          <Footer />
+        </ScrollToTop>
       </Router >
     );
   }
