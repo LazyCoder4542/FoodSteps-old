@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=BioRhyme&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.submission{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.pop-up{
+    border-radius: 15px;
+    background: #eceaea;
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    align-items: center;
+}
+
+.pop-up img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.pop-up h2{
+    font-family: 'BioRhyme', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 5px;
+    color: #858688;
+}
+
+.pop-up p{
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 5px;
+    color: #858688;
+}
