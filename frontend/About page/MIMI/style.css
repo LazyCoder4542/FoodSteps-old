@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* variables */
+:root {
+    /* fonts */
+    --ff-header: BioRhyme;
+    --ff-content: SF Compact Display;
+  
+    /* colours */
+    --clr-white: #FFFFFF;
+    --clr-link: #3633F8;
+    --clr-primary1-100: #5C1010;
+    --clr-primary1-80: #843838;
+    --clr-primary1-50: #AC6060;
+    --clr-primary1-20: #D48888;
+    --clr-primary1-5: #FFC4C4;
+    --clr-neutral-100: #17181C;
+    --clr-neutral-80: #434447;
+    --clr-neutral-50: #858688;
+    --clr-neutral-20: #C9C9CA;
+    --clr-neutral-5: #EAEAEA;
+    --clr-neutral-5-50: #EAEAEA88;
+    --clr-primary2-100: #FFD300;
+    --clr-primary2-80: #FDDA31;
+    --clr-primary2-50: #FAE37A;
+    --clr-primary2-20: #F7EEC4;
+    --clr-primary2-5: #F6F4E9;
+  
+    /* Page Padding */
+    --page-padding: 1rem;
+  
+  }
+  body{
+    padding: var(--page-padding);
+  }
+  .about__us{
+    border-left: 6px solid var(--clr-primary1-100);
+    text-shadow: 1px 16px 25px rgba(0, 0, 0, 0.25);
+    width: 219px;
+    height: 52px;
+    font-family: var(--ff-header);
+    font-weight: 700;
+    font-size: 45px;
+    
+  }
+  .middle_text{
+    text-align: center;
+    margin-top: 10px; 
+    line-height: 28px; 
+  }
+
+  .middle_text p{
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    
+    
+  }
+  .logo__one{
+    width: 517px;
+    height: 179px;
+    font-family: 'Arizonia';
+    background-color: var(--clr-neutral-5-50);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 136.777px;
+     line-height: 171px; 
+  }
+  .logo__two{
+    width: 550px;
+    height: 203px;
+    
+  }
+  .second_middle{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 6em;
+    line-height: 64px;
+  }
+  h1{
+    width: 95px;
+    height: 64px;
+    font-family: var(--ff-header);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 57px;
+    letter-spacing: -0.25px;
+    color: #000000;
+
+   
+  }
+  .third_middle{
+    text-align: center;
+    line-height: 52px;
+    
+  }
+  .logo__three, .logo__four{
+    height: 52px;
+    font-family: 'BioRhyme';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    
+  }
+  .text_lorem{
+    width: 1272px;
+    height: 84px;
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    padding: 2rem;
+  }
+  @media only screen and (max-width:600px){
+    .about__us{
+      width: 175px;
+      height: 44px;
+    }
+    .second_middle{
+      display: flex;
+      flex-direction: column;
+    }
+    .logo__one{
+      width: 371.68px;
+      height: 128.68px;
+      font-size: 98.3303px;
+      line-height: 123px;
+
+    }
+    .logo__two{
+      width: 396px;
+      height: 174px;
+    }
+    h1{
+      width: 95px;
+      line-height: 44px;
+      font-weight: 700;
+      font-size: 36px;
+    }
+    .logo__three{
+      width: 288px;
+      height: 44px;
+      font-size: 36px;
+    }
+    .logo__four{
+      width: 389px;
+      height: 44px;
+      font-size: 36px;
+    }
+    .text_lorem{
+      width: 396px;
+      height: 120px;
+      padding: 2rem;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+  }
+    

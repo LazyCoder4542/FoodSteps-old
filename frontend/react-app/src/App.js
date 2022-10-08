@@ -13,8 +13,12 @@ import Page404 from "./pages/404";
 
 // IMPORTING COMPONENTS
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
-  state = {}
+  state = {
+    allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"]
+  }
   constructor() {
     super()
     if (window.matchMedia) {
@@ -52,29 +56,32 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header themetoggler={this.themetoggler} />
-        <div className="container">
-          <Routes>
-            <Route exact path="/" element={
-              <HomePage />
-            } />
-            <Route path="/categories" element={
-              <Categories />
-            } />
-            <Route path="/about" element={
-              <About />
-            } />
-            <Route path="/contact-us" element={
-              <ContactUs />
-            } />
-            <Route path="/write-for-us" element={
-              <Write />
-            } />
-            <Route path="*" element={
-              <Page404 />
-            } />
-          </Routes>
-        </div>
+        <ScrollToTop>
+          <Header themetoggler={this.themetoggler} categories={this.state.allCategories}/>
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={
+                <HomePage />
+              } />
+              <Route path="/category">
+                <Route path=":categoryName" element={<Categories categories={this.state.allCategories} />} />
+              </Route>
+              <Route path="/about" element={
+                <About />
+              } />
+              <Route path="/contact-us" element={
+                <ContactUs />
+              } />
+              <Route path="/write-for-us" element={
+                <Write />
+              } />
+              <Route path="*" element={
+                <Page404 />
+              } />
+            </Routes>
+          </div>
+          <Footer />
+        </ScrollToTop>
       </Router >
     );
   }
