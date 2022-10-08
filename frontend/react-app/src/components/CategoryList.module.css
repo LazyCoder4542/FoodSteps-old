@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&display=swap');
+
+:root {
+  /* fonts */
+  --ff-header: BioRhyme;
+  --ff-content: SF Compact Display;
+
+  /* colours */
+  --clr-white: #ffffff;
+  --clr-link: #3633f8;
+  --clr-primary1-100: #5c1010;
+  --clr-primary1-80: #843838;
+  --clr-primary1-50: #ac6060;
+  --clr-primary1-20: #d48888;
+  --clr-primary1-5: #ffc4c4;
+  --clr-neutral-100: #17181c;
+  --clr-neutral-80: #434447;
+  --clr-neutral-50: #858688;
+  --clr-neutral-20: #c9c9ca;
+  --clr-neutral-5: #eaeaea;
+  --clr-neutral-5-50: #eaeaea88;
+  --clr-primary2-100: #ffd300;
+  --clr-primary2-80: #fdda31;
+  --clr-primary2-50: #fae37a;
+  --clr-primary2-20: #f7eec4;
+  --clr-primary2-5: #f6f4e9;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+h2,
+h3 {
+  font-family: var(--ff-header);
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  text-shadow: 1px 16px 25px rgba(0, 0, 0, 0.25);
+}
+
+h3 {
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--clr-primary1-5);
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.container2 p {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  color: var(--clr-neutral-100);
+  padding: 1rem 0;
+  font-family: var(--ff-content);
+}
+
+.container2 h3 {
+  text-align: center;
+}
+
+#author {
+  background-color: var(--clr-white);
+  padding: 0.2rem 0.2rem;
+  margin: 0 8rem;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--ff-content);
+}
+
+#read-more {
+  text-decoration: none;
+  color: var(--clr-link);
+  font-weight: 600;
+  float: bottom left;
+}
+
+#read-more:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.container2 span {
+  float: right;
+  color: var(--clr-primary1-100);
+  font-weight: 700;
+}
+
+.container2 i {
+  padding-left: 0.3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 898px) {
+  .post {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container1 > img {
+    max-width: 100%;
+  }
+
+  #author {
+    margin: 0 6rem;
+  }
+}
