@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Submission Pop Up</title>
+</head>
+
+<body>
+    <main>
+        <div id="demo-modal" class="modal" role="dialog" tabindex="-1">
+            <div class="model-inner">
+                <div class="modal-header">
+                    <button class="modal-close" data-id="demo-modal" aria-label="Close">
+                        <img class="close__btn" src="./images/close-circle.svg" alt="">
+                    </button>
+                </div>
+                <div class="content-1">
+                    <p class="content-1-title">Category</p>
+                    <div class="select-wrapper">
+                        <div class="select">
+                            <div class="select__trigger">
+                                <span>DIY</span>
+                                <div class="arrow">
+                                    <img src="./images/arrow.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="custom-options">
+                                <span class="custom-option selected" data-value="recipe">DIY</span>
+                                <span class="custom-option" data-value="others">Recipe</span>
+                                <span class="custom-option" data-value="others">Others</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-2">
+                    <input type="text" name="" id="" placeholder="Add tags">
+                </div>
+                <p class="title">Suggested Tags</p>
+                <div class="primary-button">
+                    <button>Fast</button>
+                    <button>Egusi</button>
+                    <button>Pounded</button>
+                </div>
+                <div class="secondary-button">
+                    <button class="save-btn">Save as draft</button>
+                    <button class="publish-btn">Publish</button>
+                </div>
+            </div>
+        </div>
+        <button class="modal-open" data-id="demo-modal">Write</button>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>
