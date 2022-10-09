@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  background: #eceaea;
+  line-height: 1.5;
+}
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+.modal[open] {
+  display: flex;
+}
+.model-inner {
+  background-color: #fff;
+  border-radius: 1em;
+  max-width: 600px;
+  padding: 4em;
+  margin: auto;
+
+  position: relative;
+}
+.modal-header {
+  position: absolute;
+  left: 90%;
+  top: 4%;
+}
+.modal-close {
+  border: none;
+  background: #fff;
+}
+.close__btn,
+.arrow {
+  pointer-events: none;
+}
+#modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+.content-1 {
+  background: #fff;
+  box-shadow: 0 20px 40px 0 #c5c5c540;
+  height: 56px;
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+}
+.content-1-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 0.8;
+}
+.select-wrapper {
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+.select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.375em;
+  color: #10242b;
+  font-size: 1rem;
+  font-weight: 600;
+  height: auto;
+  line-height: 1;
+  cursor: pointer;
+}
+.custom-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-top: 0;
+  background: #fff;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.select.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 0 1.375rem 0 1.375em;
+  color: #10242b;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.custom-option:hover {
+  cursor: pointer;
+  background-color: #5c1010;
+}
+.custom-option.selected {
+  background-color: #eaeaea;
+}
+.content-2 {
+  margin-top: 2em;
+  border: 1px solid #eaeaea;
+  height: 56px;
+  width: 343px;
+  border-radius: 12px;
+  padding: 0.4375em 6.8125em 0.5em 0.875em;
+}
+.content-2 input {
+  border: none;
+}
+.content-2 input::placeholder {
+  font-size: 0.8125rem;
+}
+.content-2 input:focus {
+  outline: none;
+}
+.title {
+  color: #858688;
+  font-size: 0.75rem;
+  font-weight: 400;
+
+  margin-top: 1em;
+}
+.primary-button {
+  margin-top: 0.6em;
+  display: flex;
+  gap: 1.5em;
+}
+.primary-button button {
+  font-size: 0.75rem;
+  color: #ac6060;
+  border: 1px solid #ac6060;
+  border-radius: 180px;
+  background-color: #fff;
+  padding: 0.25em 0.5em;
+}
+.secondary-button {
+  margin-top: 3em;
+  display: flex;
+  gap: 5em;
+}
+.save-btn {
+  color: #5c1010;
+  border: 1.5px solid #5c1010;
+  border-radius: 180px;
+  background-color: #fff;
+  padding: 0.5em 1em;
+}
+.save-btn:hover {
+  color: #fff;
+  background: #5c1010;
+  cursor: pointer;
+}
+.publish-btn {
+  color: #fff;
+  border: none;
+  border-radius: 180px;
+  background-color: #5c1010;
+  padding: 0.5em 2.25em;
+}
+.publish-btn:hover {
+  color: #5c1010;
+  border: 1.5px solid #5c1010;
+  background: #fff;
+  cursor: pointer;
+}
