@@ -6,7 +6,6 @@ import Overlay from "./Overlay";
 import logo from "../assets/images/logo.svg";
 import moon from "../assets/images/moon.svg";
 import sun from "../assets/images/sun.svg";
-import dropdown from "../assets/icons/dropdown.svg";
 class Header extends Component {
   state = {
     menuOpen: false,

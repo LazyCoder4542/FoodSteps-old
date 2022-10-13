@@ -86,7 +86,7 @@ body {
   font-weight: 400;
 }
 
-input {
+input[type="text"],input[type="email"], input[type="password"] {
   outline: none;
   border: none;
   font-family: inherit;
@@ -96,7 +96,8 @@ input {
 }
 
 a {
-  all: unset
+  all: unset;
+  cursor: pointer
 }
 
 a.link {
@@ -143,12 +144,28 @@ p {
   line-height: 1.5rem;
   letter-spacing: 0.5px;
 }
+
+button.primary, button.secondary {
+  border: none;
+  display: inline-flex;
+  padding: .5rem 1rem;
+  border-radius: 1rem
+}
+button.secondary {
+  border: 1px solid var(--clr-primary1-100);
+  color: var(--clr-primary1-100);
+}
+button.primary {
+  background-color: var(--clr-primary1-100);
+  color: var(--clr-white);
+}
 /*img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
-}
+}*/
+
 
 /* site header */
 #site-header {

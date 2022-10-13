@@ -1,21 +1,24 @@
 import React from "react";
 
+import { Team } from "./Home";
+import "./About.css"
 function About() {
   return (
     <React.Fragment>
-      <div className="middle_text">
-          <img src="About Us.png" alt="About us img" />
+      <section id="about">
+        <header>
+          <h1>About Us</h1>
+        </header>
+        <div className="middle_text">
           <p>Our Story from Start to Success</p>
-      </div>
-      <div className="second_middle">
-          <img src="FoodSteps.png" alt="foodstep image" /> <h3>By</h3> <img src="logo546546 1.png" alt="logo" />
-      </div>
-      <div className="third_middle">
-          <img src="Meet the team_.png" alt="meet image" /><img src="Just Project Group 7.png" alt="just image" />
-      </div>
-      <div className="text_lorem">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nisi consectetur, quibusdam veniam deserunt voluptate similique perspiciatis amet sint, error aspernatur pariatur non consequuntur voluptatum sequi tempora id atque aut.</p>
-      </div>
+        </div>
+        <div className="second_middle">
+          <img src="images/FoodSteps.png" alt="foodstep image" className="logo__one" />
+          <h1>By</h1>
+          <img src="images/logo546546 1.png" alt="logo" className="logo__two" />
+        </div>
+      </section>
+      <Team />
     </React.Fragment>
   );
 }

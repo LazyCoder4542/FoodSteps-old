@@ -1,0 +1,56 @@
+#create-post  label {
+    display: block;
+    margin-bottom: .5rem
+}
+#create-post > .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#create-post > .buttons > button {
+    display: inline-flex;
+}
+#create-post > .topic {
+    margin-bottom: 1rem
+}
+#create-post > .topic > span {
+    display: flex;
+    align-items: center;
+}
+#create-post > .topic > span > svg{
+    width: 2rem;
+    box-sizing: content-box;
+    height: auto;
+    object-fit: center;
+    padding-right: .5rem;
+    border-right: 1px solid var(--clr-neutral-50)
+}
+#create-post > .topic > span > input{
+    font-size: 1.5rem;
+    width: 100%;
+    font-family: var(--ff-header);
+}
+#create-post > .topic > span > input::placeholder {
+    font-size: 1rem;
+    color: var(--clr-neutral-50)
+}
+#create-post > .images {
+    margin-top: 1rem
+}
+#create-post > .images > input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+}
+#create-post > .images > input[type="file"]::before {
+  display: inline-flex;
+  content: 'Select images';
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--clr-primary1-100);
+  color: var(--clr-primary1-100);
+  margin-right: .5rem
+}
+#create-post > .images > input[type="file"]:nth-of-type(1)::before {
+    content: 'Select image';   
+}

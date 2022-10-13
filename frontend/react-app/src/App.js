@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-import './App.css';
 
 // IMPORTING PAGES
 import HomePage from "./pages/Home";
@@ -15,9 +14,13 @@ import Page404 from "./pages/404";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import NewPost from "./pages/NewPost";
+
+import './App.css';
 class App extends Component {
   state = {
     allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"],
+    is404: false,
   }
   constructor() {
     super()
@@ -53,11 +56,19 @@ class App extends Component {
     document.documentElement.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
   }
+  toggleHeadFoot = (which) => {
+    if (which) {
+      console.log('in');
+      this.setState({is404 : true})
+    }
+    else {this.setState({is404: false})}
+    setTimeout(() =>{console.log(this.state.is404)}, 0)
+  }
   render() {
     return (
       <Router>
         <ScrollToTop>
-          <Header themetoggler={this.themetoggler} categories={this.state.allCategories} hidden={this.state.is404}/>
+          {!this.state.is404 ? <Header themetoggler={this.themetoggler} categories={this.state.allCategories}/> : null}
           <div className="container">
             <Routes>
               <Route exact path="/" element={
@@ -75,10 +86,13 @@ class App extends Component {
               <Route path="/write-for-us" element={
                 <Write />
               } />
-              <Route path="*" element={<Page404 />}/>
+              <Route path="/newpost" element={
+                <NewPost />
+              } />
+              <Route path="*" element={<Page404 toggleHeadFoot ={this.toggleHeadFoot}/>}/>
             </Routes>
           </div>
-          <Footer hidden={this.state.is404} />
+          {!this.state.is404 ? <Footer /> : null}
         </ScrollToTop>
       </Router >
     );
