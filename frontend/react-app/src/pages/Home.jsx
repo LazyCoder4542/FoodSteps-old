@@ -3,17 +3,6 @@ import React, { Component } from "react";
 import "./Home.css";
 class HomePage extends Component {
   state = {};
-  componentDidMount() {
-    var time = 100000
-    var members = document.querySelector('.team');
-    members.style.animationDuration = `${time}ms`;
-    var membersClone = members.cloneNode('true');
-    membersClone.classList.add('copy');
-    members.parentElement.appendChild(membersClone);
-    members.style.animationName = 'slide';
-    membersClone.style.animationName = 'slide';
-    membersClone.style.animationDelay = `${time / 2}ms`;
-  }
   render() {
     return (
       <React.Fragment>
@@ -246,9 +235,29 @@ class HomePage extends Component {
             </div>
           </div>
         </section>
-        <section id="team">
+        <Team />
+      </React.Fragment>
+    );
+  }
+}
+class Team extends Component {
+  state = {  } 
+  componentDidMount() {
+    var time = 100000
+    var members = document.querySelector('.team');
+    members.style.animationDuration = `${time}ms`;
+    var membersClone = members.cloneNode('true');
+    membersClone.classList.add('copy');
+    members.parentElement.appendChild(membersClone);
+    members.style.animationName = 'slide';
+    membersClone.style.animationName = 'slide';
+    membersClone.style.animationDelay = `${time / 2}ms`;
+  }
+  render() { 
+    return (
+      <section id="team">
           <header>
-            <h1>Meet the team</h1>
+            <h1>Meet the team: Just Projects Group 7</h1>
           </header>
           <div className="wrapper">
             <div>
@@ -418,9 +427,10 @@ class HomePage extends Component {
             </div>
           </div>
         </section>
-      </React.Fragment>
     );
   }
 }
+ 
+export {Team}
 
 export default HomePage;

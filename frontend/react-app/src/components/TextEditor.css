@@ -1,0 +1,82 @@
+.RichEditor-root {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding: 1rem;
+  justify-content: flex-start;
+  border-radius: 1.5rem;
+}
+.RichEditor-root .public-DraftEditorPlaceholder-inner {
+  color: var(--clr-neutral-50);
+  font-weight: lighter;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.RichEditor-root .public-DraftEditorPlaceholder-inner::before {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  background-size: contain;
+  background-image: url("../assets/icons/add-circle.svg");
+  content: "";
+  padding-right: 0.5rem;
+  box-sizing: content-box;
+  background-clip: content-box;
+  border-right: 1px solid var(--clr-neutral-50);
+}
+.RichEditor-root .RichEditor-editor, .RichEditor-root .RichEditor-controls {
+  background-color: var(--clr-white);
+  padding: 0.5rem;
+}
+.RichEditor-root .RichEditor-controls {
+  border-radius: 1.75rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  align-items: stretch;
+  margin-bottom: 5px;
+  user-select: none;
+}
+.RichEditor-root .RichEditor-controls span {
+  place-items: center;
+  display: inline-flex;
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+}
+.RichEditor-root .RichEditor-controls span img {
+  width: 1rem;
+}
+.RichEditor-root .RichEditor-controls span:not(.label):hover {
+  background-color: #ddd;
+}
+.RichEditor-root .RichEditor-controls span:not(.label).RichEditor-activeButton {
+  background-color: var(--clr-primary1-5);
+}
+.RichEditor-root .RichEditor-editor {
+  min-height: 10rem;
+  max-height: 15rem;
+  overflow-y: auto;
+  border-radius: 1rem;
+}
+.RichEditor-root .RichEditor-editor blockquote {
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--clr-primary1-5);
+  font-style: italic;
+}
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
+}
+.RichEditor-root .RichEditor-editor ul, .RichEditor-root .RichEditor-editor ol {
+  list-style-position: inside;
+}
+.RichEditor-root .RichEditor-editor ul li div, .RichEditor-root .RichEditor-editor ol li div {
+  display: inline;
+}

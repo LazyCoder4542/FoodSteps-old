@@ -1,0 +1,55 @@
+section#about
+section#about .middle_text{
+    text-align: center;
+    margin-top: 10px; 
+    line-height: 28px; 
+}
+
+section#about .middle_text p{
+    font-size: 20px; 
+    text-align: center;  
+}
+section#about .logo__one{
+    background-color: var(--clr-neutral-5-50);
+    padding: 1rem;
+}
+section#about .logo__one, section#about .logo__two{
+    width: 40%;
+    height: 100%;
+    object-fit: center;
+}
+section#about .second_middle{
+    display: inline-flex;
+    justify-content: center;
+    gap: 2.25rem;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 6em;
+    line-height: 64px;
+    width: 100%;
+}
+  @media only screen and (max-width:600px){
+    .about__us{
+      width: 175px;
+      height: 44px;
+    }
+    .second_middle{
+      flex-direction: column;
+    }
+    .logo__one{
+      width: 371.68px;
+      height: 128.68px;
+      font-size: 98.3303px;
+      line-height: 123px;
+
+    }
+    .logo__two{
+      width: 396px;
+      height: 174px;
+    }
+    section#about .logo__one, section#about .logo__two{
+        width: 100%
+    }
+
+  }
+    
