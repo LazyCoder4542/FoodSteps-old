@@ -22,3 +22,5 @@ function CategoryList(props) {
 }
 
 export default CategoryList;
+
+console.log("props.items")
