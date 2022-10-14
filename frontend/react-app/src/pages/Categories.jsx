@@ -172,8 +172,15 @@ function Categories(props) {
    const [postsPerPage, setPostsPerPage] = useState(5)
   const allCategories = props.categories
   let { categoryName } = useParams()
+  let index = () => {
+    try {
+      return allCategories.indexOf(categoryName)
+    } catch (error) {
+      return null
+    }
+  }
   categoryName = decodeURIComponent(categoryName)
-  if (allCategories.indexOf(categoryName) !== -1) {
+  if (index !== -1) {
     /* Your Code Goes here */
   //   if(items.length > 10) {
   //     items = items.slice(0, 9)
@@ -243,6 +250,10 @@ function Categories(props) {
      </React.Fragment>)
 ;
 }
+    else if (index === null) {
+      /* Page Loading */
+      return null
+    }
   /* If category doesn't exist */
    else {
     return <Page404 />

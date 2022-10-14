@@ -17,10 +17,21 @@ import ScrollToTop from "./components/ScrollToTop";
 import NewPost from "./pages/NewPost";
 
 import './App.css';
+const axios = require('axios').default;
 class App extends Component {
   state = {
-    allCategories: ["DIY Chinese Take out", "Cooking basics", "Breakfask/Brunch", "Quick and easy", "Meat-free"],
+    allCategories: null,
     is404: false,
+  }
+  async getCategories() {
+    const res = await fetch('http://davinci.pythonanywhere.com/categories')
+    const data = await res.json()
+    let arr = []
+    data.forEach(itm => {
+      arr.push(itm.name)
+    });
+    this.setState({allCategories: arr})
+    console.log(arr)
   }
   constructor() {
     super()
@@ -49,6 +60,7 @@ class App extends Component {
   }
   componentDidMount() {
     headerScroll()
+    this.getCategories().then()
   }
   themetoggler = () => {
     var currentTheme = document.documentElement.dataset.theme || 'light';
@@ -109,15 +121,12 @@ function headerScroll() {
   var body = document.querySelector(".container");
   var sticky = header.offsetTop;
   function myFunction() {
-    console.log('function invoked');
     if (window.scrollY > sticky) {
       header.classList.add("sticky");
       body.style.paddingTop = header.getBoundingClientRect().height + 'px'
-      console.log('added');
     } else {
       header.classList.remove("sticky");
       body.style.paddingTop = null
-      console.log('removed');
     }
   }
 }

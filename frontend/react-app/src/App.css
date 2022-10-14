@@ -196,6 +196,10 @@ button.primary {
 }
 #site-header>.wrapper1>.search {
   display: none;
+  width: 30rem
+}
+#site-header>.wrapper1>.search>.search-box {
+  flex-direction: row-reverse;
 }
 
 #site-header>.wrapper1>.toggle-theme>span {
@@ -481,8 +485,21 @@ button.primary {
 }
 
 @media screen and (min-width: 1024px) {
+  :root {
+    --page-padding: 7.5rem;
+  }
+  body {
+    font-size: 1.2rem;
+  }
+  
   h1 {
     font-size: 2.8rem;
+  }
+  #site-header {
+    --padding: 1rem var(--page-padding);
+  }
+  #site-header>.wrapper1>.icon {
+    height: 3rem;
   }
   #site-header>.wrapper1>.search {
     display: block;

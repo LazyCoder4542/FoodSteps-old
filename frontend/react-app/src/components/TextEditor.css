@@ -37,6 +37,8 @@
   flex-wrap: wrap;
   font-size: 0.75rem;
   align-items: stretch;
+  margin-bottom: 5px;
+  user-select: none;
 }
 .RichEditor-root .RichEditor-controls span {
   place-items: center;
@@ -56,12 +58,21 @@
 }
 .RichEditor-root .RichEditor-editor {
   min-height: 10rem;
+  max-height: 15rem;
+  overflow-y: auto;
   border-radius: 1rem;
 }
 .RichEditor-root .RichEditor-editor blockquote {
   margin-left: 0.5rem;
   padding-left: 1rem;
   border-left: 2px solid var(--clr-primary1-5);
+  font-style: italic;
+}
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
 }
 .RichEditor-root .RichEditor-editor ul, .RichEditor-root .RichEditor-editor ol {
   list-style-position: inside;

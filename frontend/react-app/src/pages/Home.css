@@ -76,7 +76,43 @@ section#hero>.tagline {
     transform-origin: center left;
     transform: rotateZ(-45deg);
 }
-
+@media screen and (min-width: 425px) {
+    section#hero>.tagline {
+        height: 2.25rem;
+        position: absolute;
+        bottom: 0;
+        left: 28vw;
+    }
+}
+@media screen and (min-width: 540px) {
+    section#hero>.tagline {
+        height: 2.25rem;
+        position: absolute;
+        bottom: 0;
+        left: 32vw;
+    }
+}
+@media screen and (min-width: 768px) {
+    section#hero>img.spin {
+        display: none;
+    }
+    section#hero>.tagline {
+        height: 2.25rem;
+        position: absolute;
+        bottom: 0;
+        left: 38vw;
+    }
+}
+@media screen and (min-width: 800px) {
+    section#hero>.tagline {
+        height: 4rem;
+        bottom: auto;
+        top: 45%;
+        left: auto;
+        right: 3vw;
+        opacity: 0.6;
+    }
+}
 section#hero>.tagline>img {
     height: 100%;
 }
@@ -100,6 +136,16 @@ section#featured>.wrapper>.post-cards {
 
 section#featured>.wrapper>.post-cards>.mini-post {
     width: 18rem;
+}
+@media screen and (min-width: 768px) {
+    section#featured>.wrapper>.post-cards>.mini-post {
+        width: 20rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    section#featured>.wrapper>.post-cards>.mini-post {
+        width: 22rem;
+    }
 }
 
 section#popular>.wrapper1 {
@@ -275,10 +321,8 @@ section#team>.wrapper>.team-slider>.team>.team-member>.details {
     color: var(--clr-primary1-100);
 }
 
+
 @media screen and (min-width: 1024px) {
-    section#hero>img.spin {
-        display: none;
-    }
     section#hero>header>h1 {
         color: var(--clr-primary1-100);
         display: grid;
@@ -295,12 +339,56 @@ section#team>.wrapper>.team-slider>.team>.team-member>.details {
     section#hero>.tagline {
         height: 4rem;
         bottom: auto;
-        top: 45%;
+        top: 46%;
+        left: auto;
+        right: 6vw;
+        opacity: 0.6;
+        transform-origin: center left;
+        transform: rotateZ(-45deg);
+        /*transform: none;*/
+    }
+}
+@media screen and (min-width: 1024px) {
+    section#hero>img.hero-mobile {
+        width: 100%;
+        height: 80vh;
+        visibility: visible;
+    }
+    section#hero>.tagline {
+        height: 5rem;
+        bottom: auto;
+        top: 46%;
         left: auto;
         right: 9vw;
         opacity: 0.6;
         transform-origin: center left;
         transform: rotateZ(-45deg);
         /*transform: none;*/
+    }
+    section#popular {
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: 3fr 2fr;
+        justify-content: center;
+        align-items: flex-start;
+        column-gap: 3rem;
+    }
+    section#popular>header {
+        grid-area: 1/1/2/3;
+    }
+    section#popular>.wrapper1 {
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    section#popular>.wrapper1>.post-cards {
+        padding-inline: 0;
+        display: flex;
+    }
+    section#popular>.wrapper1>.post-cards>.mini-post {
+        height: 26.75rem;
+        flex-direction: row;
+    }
+    section#popular>.wrapper2 {
+        margin-top: 0;
     }
 }
