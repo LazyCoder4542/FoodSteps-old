@@ -152,6 +152,18 @@ h3 {
   border-radius: 30px;
 }
 
+#backward:hover {
+  background-color: var(--clr-primary1-100);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+#forward:hover {
+  background-color: var(--clr-primary1-100);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
 @media (max-width: 1114px) {
   .wrapper2 {
     display: none;
