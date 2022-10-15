@@ -172,18 +172,23 @@ function Categories(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState(items);
    const [postsPerPage, setPostsPerPage] = useState(5);
+   let { categoryName } = useParams()
   useEffect(() => {
     const fetchPosts = async () => {
-    const response = await fetch('http://davinci.pythonanywhere.com/posts');
+    const response = await fetch('https://davinci.pythonanywhere.com/posts');
     const responseData = await response.json();
     console.log(responseData);
-    setPosts(responseData, ...posts)
+    let arr = responseData.filter((item) => {
+      return item.category === categoryName 
+    })
+    console.log(responseData);
+    setPosts(arr)
     };
-  
     fetchPosts()
-  }, []);
+  }, [categoryName]);
+
+
   const allCategories = props.categories
-  let { categoryName } = useParams()
   let index = () => {
     try {
       return allCategories.indexOf(categoryName)

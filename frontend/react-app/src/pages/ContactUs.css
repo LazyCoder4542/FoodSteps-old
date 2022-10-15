@@ -1,0 +1,100 @@
+#contact-us .P-1{
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #17181C;
+}
+
+#contact-us .img{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+#contact-us .img > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#contact-us .P-2{
+    font-family: 'SF Compact Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #17181C;
+}
+
+#contact-us .container{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-us form{
+    width: 90%;
+    max-width: 600px;
+}
+
+#contact-us .input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#contact-us input, #contact-us textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #ffffff;
+    color:  #17181C;
+    background: #EAEAEA;;
+    font-size: 15px;
+}
+
+#contact-us label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #5C1010;
+    cursor: text;
+    transition: 0.2s;
+}
+
+#contact-us button{
+    padding: 10px 0;
+    color: #5C1010;
+    outline: none;
+    background: #FFC4C4;
+    border: 1px solid #C9C9CA;
+    width: 100%;
+    cursor: pointer;
+}
+
+#contact-us input:focus~label,
+#contact-us input:valid~label,
+#contact-us textarea:focus~label,
+#contact-us textarea:valid~label{
+    top: -35px;
+    font-size: 14px;
+}
+
+#contact-us .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-us .row .input-group{
+    flex-basis: 48%;
+}

@@ -23,9 +23,8 @@ class App extends Component {
     is404: false,
   };
   async getCategories() {
-    const res = await fetch('http://davinci.pythonanywhere.com/categories');
+    const res = await fetch('https://davinci.pythonanywhere.com/categories');
     const data = await res.json();
-    console.log(data);
     let arr = [];
     data.forEach((itm) => {
       arr.push(itm.name);

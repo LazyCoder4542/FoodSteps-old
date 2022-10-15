@@ -3,17 +3,17 @@ import styles from "./CategoryList.module.css"
 // import pic from {process.env.PUBLIC_URL + "/images/Picture for card (1).png"}
 
 function CategoryList(props) {
-    const image = "props.items.img";
-    if(props.items.img === null) {
-        image = process.env.PUBLIC_URL + "/images/Picture for card (1).png";
-    }
+    // const image = "props.items.img";
+    // if(props.items.img === null) {
+    //     image = process.env.PUBLIC_URL + "/images/Picture for card (1).png";
+    // }
     
 
     return ( 
         <React.Fragment>
         <div className={styles.post}>
     <div className={styles.container1}>
-         <img src={`${image}`} alt="Food"/>  
+         <img src={process.env.PUBLIC_URL + "/images/Picture for card (1).png"} alt="Food"/>  
     </div>
     <div className={styles.container2}>
         <h3>{props.items.title}</h3>
