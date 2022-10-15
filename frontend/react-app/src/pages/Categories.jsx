@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
 import styles from "./Categories.module.css";
 import CategoryList from "../components/CategoryList";
 import Page404 from "./404";
 
 let items = [
   {
-   img: "/images/Picture for card (1).png",
+   img: null,
    title: "How to make soup",
    paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
    author: "Luke Sapron",
@@ -14,7 +15,7 @@ let items = [
   },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -22,7 +23,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -30,7 +31,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -38,7 +39,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -46,7 +47,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -54,7 +55,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -62,7 +63,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -70,7 +71,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -78,7 +79,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -86,7 +87,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -94,7 +95,7 @@ let items = [
    },
 
   {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -102,7 +103,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -110,7 +111,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -118,7 +119,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -126,7 +127,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -134,7 +135,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -142,7 +143,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -150,7 +151,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -158,7 +159,7 @@ let items = [
    },
 
    {
-    img: "/images/Picture for card (1).png",
+    img: null,
     title: "How to make soup",
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
     author: "Luke Sapron",
@@ -168,10 +169,26 @@ let items = [
 ] 
 
 function Categories(props) {
-  const [currentPage, setCurrentPage] = useState(1)
-   const [postsPerPage, setPostsPerPage] = useState(5)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [posts, setPosts] = useState(items);
+   const [postsPerPage, setPostsPerPage] = useState(5);
+   let { categoryName } = useParams()
+  useEffect(() => {
+    const fetchPosts = async () => {
+    const response = await fetch('https://davinci.pythonanywhere.com/posts');
+    const responseData = await response.json();
+    console.log(responseData);
+    let arr = responseData.filter((item) => {
+      return item.category === categoryName 
+    })
+    console.log(responseData);
+    setPosts(arr)
+    };
+    fetchPosts()
+  }, [categoryName]);
+
+
   const allCategories = props.categories
-  let { categoryName } = useParams()
   let index = () => {
     try {
       return allCategories.indexOf(categoryName)
@@ -182,26 +199,17 @@ function Categories(props) {
   categoryName = decodeURIComponent(categoryName)
   if (index !== -1) {
     /* Your Code Goes here */
-  //   if(items.length > 10) {
-  //     items = items.slice(0, 9)
-  //  }
-   
-  //  const NextPageHandler = () => {
-  //    items = items.slice(9-18)
-  //  }
-
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex  = lastPostIndex - postsPerPage;
- const currentPosts = items.slice(firstPostIndex, lastPostIndex);
+ const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
  let pages = [];
- const totalPosts = items.length
+ const totalPosts = posts.length
   
  for (let i=1; i<= Math.ceil(totalPosts/postsPerPage); i++) {
      pages.push(i)
  }
  
-
-    return (
+return (
       <React.Fragment>
     <h1>Categories &gt; {categoryName}</h1>
     <div className={styles["section-one"]}>
@@ -212,7 +220,7 @@ function Categories(props) {
             </div>
             <div className={styles.box2}>
               <div className={styles.wrapper1}>
-                {currentPosts.map((currentPosts) =>
+                {currentPosts.map((currentPosts) => 
                   <CategoryList items={currentPosts}/>
                 )}
               </div>
@@ -220,7 +228,7 @@ function Categories(props) {
                     <div className={styles.container3}>
                         <h3>Write For us</h3>
                         <p>Join the team of authors and rule your articles</p>
-                        <button id={styles["write-for-us"]}><a href="/">Write for Us</a></button>
+                        <button id={styles["write-for-us"]}><Link to="/write-for-us"> Write for Us</Link></button>
                     </div>
                 </div>
               </div>
