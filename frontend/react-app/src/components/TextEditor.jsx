@@ -8,13 +8,13 @@ import ULIcon from './../assets/icons/format_list_bulleted.svg';
 import BIcon from './../assets/icons/text-bold.svg';
 import IIcon from './../assets/icons/text-italic.svg';
 import UIcon from './../assets/icons/text-underline.svg';
-import TextIcon from './../assets/icons/text.svg';
-import ACIcon from './../assets/icons/textalign-center.svg';
-import ALIcon from './../assets/icons/textalign-left.svg';
-import ARIcon from './../assets/icons/textalign-right.svg';
-import SCIcon from './../assets/icons/smallcaps.svg';
-import LIcon from './../assets/icons/link-2.svg';
-import CIcon from './../assets/icons/code.svg'
+// import TextIcon from './../assets/icons/text.svg';
+// import ACIcon from './../assets/icons/textalign-center.svg';
+// import ALIcon from './../assets/icons/textalign-left.svg';
+// import ARIcon from './../assets/icons/textalign-right.svg';
+// import SCIcon from './../assets/icons/smallcaps.svg';
+// import LIcon from './../assets/icons/link-2.svg';
+// import CIcon from './../assets/icons/code.svg'
 
 import './TextEditor.css'
 class TextEditor extends Component {

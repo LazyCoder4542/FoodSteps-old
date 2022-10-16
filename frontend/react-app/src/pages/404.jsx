@@ -15,7 +15,7 @@ class Page404 extends Component {
     return (
       <div className="error-content">
         <div className="error-image">
-          <img src={img1} className="img" />
+          <img src={img1} className="img" alt="" />
         </div>
         <div className='error-desc'>        
           <h1 className="error-text--para">

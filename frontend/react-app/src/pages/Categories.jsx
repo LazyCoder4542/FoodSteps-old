@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 import styles from "./Categories.module.css";
 import CategoryList from "../components/CategoryList";
 import Page404 from "./404";
@@ -171,7 +171,7 @@ let items = [
 function Categories(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState(items);
-   const [postsPerPage, setPostsPerPage] = useState(5);
+   const [postsPerPage] = useState(5);
    let { categoryName } = useParams()
   useEffect(() => {
     const fetchPosts = async () => {

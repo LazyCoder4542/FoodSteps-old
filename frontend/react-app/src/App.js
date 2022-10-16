@@ -17,7 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 import './App.css';
-const axios = require('axios').default;
+//const axios = require('axios').default;
 class App extends Component {
   state = {
     allCategories: null,
